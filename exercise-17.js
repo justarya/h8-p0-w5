@@ -1,8 +1,23 @@
+// function kaliTerusRekursif(angka) {
+//   // you can only write your code here!
+//   angkaString = angka.toString();
+//   if(angkaString.length === 1) return parseInt(angkaString[0]);
+//   return parseInt(angkaString[0]) * kaliTerusRekursif(parseInt(angkaString.slice(1,angkaString.length)));
+// }
+
 function kaliTerusRekursif(angka) {
-  // you can only write your code here!
-  angkaString = angka.toString();
-  if(angkaString.length === 1) return parseInt(angkaString[0]);
-  return parseInt(angkaString[0]) * kaliTerusRekursif(parseInt(angkaString.slice(1,angkaString.length)));
+    // you can only write your code here!
+  let angkaString = angka.toString();
+  let hasil = 1;
+  for(let i=0;i<angkaString.length;i++){
+    hasil *= angkaString[i];
+  }
+  let hasilString = hasil.toString();
+  if(hasilString.length > 1){
+    hasil = kaliTerusRekursif(hasil);
+  }
+  return hasil;
+
 }
 
 // TEST CASES
